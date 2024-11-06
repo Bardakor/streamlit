@@ -1,25 +1,7 @@
-# Python and Virtual Environment
 venv/
 __pycache__/
-*.py[cod]
-
-# macOS specific files
 .DS_Store
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
-
-# Streamlit cache files
-.streamlit/
-*.log
-
-# SQLite database files
 *.db
 *.sqlite3
-
-# VSCode files
-.vscode/
-
-# Environment variables file (if using one for secrets)
-.env
-
+.streamlit/
+*.log
