@@ -1,6 +1,7 @@
 streamlit
 pandas
+plotly
 matplotlib
 seaborn
-plotly
-sqlalchemy
+pillow
+# Add any other libraries you are using, such as custom libraries
