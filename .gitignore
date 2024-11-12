@@ -1,8 +1,21 @@
+# Virtual environment
 venv/
+
+# Python cache files
 __pycache__/
+
+# macOS specific files
 .DS_Store
+
+# Database files
 *.db
 *.sqlite3
+
+# Streamlit configuration and cache
 .streamlit/
+
+# Log files
 *.log
-.secrets.toml
+
+# Secrets file
+secrets.toml
