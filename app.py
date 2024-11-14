@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
-from visualizations import *         # Assuming custom visualizations
-from utils import run_query          # Assuming custom query functions
+from visualizations import *         
+from utils import run_query          
 import time
 
 # Set wide page configuration and favicon
