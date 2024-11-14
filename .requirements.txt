@@ -1,6 +1,6 @@
 streamlit
 pandas
-plotly
+plotly==5.13.0
 matplotlib
 seaborn
 pillow
