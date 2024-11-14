@@ -6,9 +6,22 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 from PIL import Image
-from visualizations import *         
-from utils import run_query          
+from visualizations import *
+from utils import run_query
 import time
+
+import subprocess
+import sys
+
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+
+try:
+    import plotly.express as px
+except ImportError:
+    install("plotly")
 
 # Set wide page configuration and favicon
 st.set_page_config(
