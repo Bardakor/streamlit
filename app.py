@@ -115,6 +115,7 @@ st.markdown(
 )
 
 # Key Maritime Metrics in a flex layout
+# Key Maritime Metrics in a flex layout
 st.markdown('<h2 class="section-header">🌍 Key Maritime Metrics</h2>',
             unsafe_allow_html=True)
 with st.spinner("Loading Summary Metrics..."):
@@ -125,19 +126,19 @@ with st.spinner("Loading Summary Metrics..."):
 
         # Total Voyages
         col1.metric("Total Voyages", run_query(
-            "SELECT COUNT(*) FROM api_voyage")['count'][0])
+            "SELECT COUNT(*) AS total_voyages FROM api_voyage")['total_voyages'][0])
 
         # Unique Ports
         col2.metric("Unique Ports", run_query(
-            "SELECT COUNT(DISTINCT port_name) FROM api_port")['count'][0])
+            "SELECT COUNT(DISTINCT port_name) AS unique_ports FROM api_port")['unique_ports'][0])
 
         # Vessel Types
         col3.metric("Vessel Types", run_query(
-            "SELECT COUNT(DISTINCT vessel_type) FROM api_ship")['count'][0])
+            "SELECT COUNT(DISTINCT vessel_type) AS vessel_types FROM api_ship")['vessel_types'][0])
 
         # Active Users
         col4.metric("Active Users", run_query(
-            "SELECT COUNT(DISTINCT id) FROM auth_user")['count'][0])
+            "SELECT COUNT(DISTINCT id) AS active_users FROM auth_user")['active_users'][0])
 
 
 # # Port and Vessel Insights
