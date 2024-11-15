@@ -11,8 +11,6 @@ from utils import run_query
 import time
 
 
-
-
 # Set wide page configuration and favicon
 st.set_page_config(
     page_title="Comprehensive Maritime Dashboard",
@@ -116,10 +114,6 @@ st.markdown(
     ''', unsafe_allow_html=True
 )
 
-# Centered main title with subtle shadow effect
-st.markdown('<h1 class="title">🚢 Maritime Insights Dashboard</h1>',
-            unsafe_allow_html=True)
-
 # Key Maritime Metrics in a flex layout
 st.markdown('<h2 class="section-header">🌍 Key Maritime Metrics</h2>',
             unsafe_allow_html=True)
@@ -128,14 +122,23 @@ with st.spinner("Loading Summary Metrics..."):
     metrics_container = st.container()
     with metrics_container:
         col1, col2, col3, col4 = st.columns(4)
+
+        # Total Voyages
         col1.metric("Total Voyages", run_query(
-            "SELECT COUNT(*) FROM api_voyage")['COUNT(*)'][0])
+            "SELECT COUNT(*) FROM api_voyage")['count'][0])
+
+        # Unique Ports
         col2.metric("Unique Ports", run_query(
-            "SELECT COUNT(DISTINCT port_name) FROM api_port")['COUNT(DISTINCT port_name)'][0])
+            "SELECT COUNT(DISTINCT port_name) FROM api_port")['count'][0])
+
+        # Vessel Types
         col3.metric("Vessel Types", run_query(
-            "SELECT COUNT(DISTINCT vessel_type) FROM api_ship")['COUNT(DISTINCT vessel_type)'][0])
+            "SELECT COUNT(DISTINCT vessel_type) FROM api_ship")['count'][0])
+
+        # Active Users
         col4.metric("Active Users", run_query(
-            "SELECT COUNT(DISTINCT id) AS count FROM auth_user")['count'][0])
+            "SELECT COUNT(DISTINCT id) FROM auth_user")['count'][0])
+
 
 # # Port and Vessel Insights
 # st.markdown('<h2 class="section-header">🌐 Port and Vessel Insights</h2>',
