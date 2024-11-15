@@ -6,3 +6,4 @@ seaborn
 pillow
 psycopg2-binary
 sqlalchemy
+cloud-sql-python-connector[pg]

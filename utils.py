@@ -1,12 +1,20 @@
+import streamlit as st
 import pandas as pd
 from database import get_connection
-import streamlit as st
+
 
 def run_query(query):
-    """Execute a query and return the results as a DataFrame."""
-    try:
-        with get_connection() as conn:
-            return pd.read_sql_query(query, conn)
-    except Exception as e:
-        st.error(f"Error executing query: {e}")
-        return pd.DataFrame()  # Return an empty DataFrame on error
+    """Run a SQL query and return the results as a Pandas DataFrame."""
+    conn = get_connection()
+    return pd.read_sql_query(query, conn)
+
+
+# Streamlit app
+st.title("Cloud SQL Proxy Demo")
+
+try:
+    # Example query
+    data = run_query("SELECT * FROM api_voyage LIMIT 10;")
+    st.write(data)
+except Exception as e:
+    st.error(f"Error: {e}")

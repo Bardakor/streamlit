@@ -1,21 +1,23 @@
-import psycopg2
-from contextlib import contextmanager
-
-# PostgreSQL connection configuration
-config = {
-    "host": "/cloudsql/aiceanographers:europe-west3:django-amphitrite",
-    "port": "5432",
-    "database": "django-bulletin",
-    "user": "compare",
-    "password": "easy"
-}
+import os
+from google.cloud.sql.connector import Connector
+import pg8000.native  # Cloud SQL-compatible Python driver
 
 
-@contextmanager
 def get_connection():
-    """Context manager for PostgreSQL database connection, to ensure it closes automatically."""
-    conn = psycopg2.connect(**config)
-    try:
-        yield conn
-    finally:
-        conn.close()
+    """Establish a secure connection to the PostgreSQL database using Cloud SQL Connector."""
+    # Create a Cloud SQL Connector instance
+    connector = Connector()
+
+    # Replace with your Google Cloud SQL instance details
+    instance_connection_name = "your-project-id:your-region:your-instance-name"
+
+    # Get the connection using the Connector
+    conn = connector.connect(
+        instance_connection_name,
+        "pg8000",
+        user="compare",
+        password="easy",
+        db="django-bulletin",
+    )
+
+    return conn
