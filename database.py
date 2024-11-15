@@ -3,7 +3,7 @@ from contextlib import contextmanager
 
 # PostgreSQL connection configuration
 config = {
-    "host": "34.159.114.196",
+    "host": "/cloudsql/aiceanographers:europe-west3:django-amphitrite",
     "port": "5432",
     "database": "django-bulletin",
     "user": "compare",
