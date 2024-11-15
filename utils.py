@@ -9,12 +9,3 @@ def run_query(query):
     return pd.read_sql_query(query, conn)
 
 
-# Streamlit app
-st.title("Cloud SQL Proxy Demo")
-
-try:
-    # Example query
-    data = run_query("SELECT * FROM api_voyage LIMIT 10;")
-    st.write(data)
-except Exception as e:
-    st.error(f"Error: {e}")
