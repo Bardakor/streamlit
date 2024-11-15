@@ -5,7 +5,7 @@ from contextlib import contextmanager
 config = {
     "host": "34.159.114.196",
     "port": "5432",
-    "database": "django-amphitrite",
+    "database": "django-bulletin",
     "user": "compare",
     "password": "easy"
 }
