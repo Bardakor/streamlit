@@ -137,53 +137,53 @@ with st.spinner("Loading Summary Metrics..."):
         col4.metric("Active Users", run_query(
             "SELECT COUNT(DISTINCT id) AS count FROM auth_user")['count'][0])
 
-# Port and Vessel Insights
-st.markdown('<h2 class="section-header">🌐 Port and Vessel Insights</h2>',
-            unsafe_allow_html=True)
-with st.spinner("Loading Visual Insights..."):
-    time.sleep(1)
-    insight_container = st.container()
-    with insight_container:
-        col1, col2 = st.columns([1, 1])
+# # Port and Vessel Insights
+# st.markdown('<h2 class="section-header">🌐 Port and Vessel Insights</h2>',
+#             unsafe_allow_html=True)
+# with st.spinner("Loading Visual Insights..."):
+#     time.sleep(1)
+#     insight_container = st.container()
+#     with insight_container:
+#         col1, col2 = st.columns([1, 1])
 
-        with col1:
-            st.markdown(
-                '<h3 class="subsection-title">Top 10 Ports by Usage</h3>', unsafe_allow_html=True)
-            st.plotly_chart(top_ports_donut_chart(), use_container_width=True)
+#         with col1:
+#             st.markdown(
+#                 '<h3 class="subsection-title">Top 10 Ports by Usage</h3>', unsafe_allow_html=True)
+#             st.plotly_chart(top_ports_donut_chart(), use_container_width=True)
 
-        with col2:
-            st.markdown(
-                '<h3 class="subsection-title">Vessel Distribution</h3>', unsafe_allow_html=True)
-            st.plotly_chart(vessel_distribution_chart(),
-                            use_container_width=True)
+#         with col2:
+#             st.markdown(
+#                 '<h3 class="subsection-title">Vessel Distribution</h3>', unsafe_allow_html=True)
+#             st.plotly_chart(vessel_distribution_chart(),
+#                             use_container_width=True)
 
-# Voyage Analysis Section
-st.markdown('<h2 class="section-header">🌊 Voyage Analysis</h2>',
-            unsafe_allow_html=True)
-with st.spinner("Loading Voyage Data..."):
-    time.sleep(1)
-    voyage_container = st.container()
-    with voyage_container:
-        col1, col2 = st.columns([3, 1])
+# # Voyage Analysis Section
+# st.markdown('<h2 class="section-header">🌊 Voyage Analysis</h2>',
+#             unsafe_allow_html=True)
+# with st.spinner("Loading Voyage Data..."):
+#     time.sleep(1)
+#     voyage_container = st.container()
+#     with voyage_container:
+#         col1, col2 = st.columns([3, 1])
 
-        with col1:
-            st.markdown(
-                '<h3 class="subsection-title">Interactive Voyage Map</h3>', unsafe_allow_html=True)
-            st.plotly_chart(voyage_map(), use_container_width=True)
+#         with col1:
+#             st.markdown(
+#                 '<h3 class="subsection-title">Interactive Voyage Map</h3>', unsafe_allow_html=True)
+#             st.plotly_chart(voyage_map(), use_container_width=True)
 
-        with col2:
-            st.markdown(
-                '<h3 class="subsection-title">Voyage Durations Distribution</h3>', unsafe_allow_html=True)
-            st.plotly_chart(voyage_durations_boxplot(),
-                            use_container_width=True)
+#         with col2:
+#             st.markdown(
+#                 '<h3 class="subsection-title">Voyage Durations Distribution</h3>', unsafe_allow_html=True)
+#             st.plotly_chart(voyage_durations_boxplot(),
+#                             use_container_width=True)
 
-# Analysis Overview with custom styling
-st.markdown('<h2 class="section-header">🔍 Analysis Overview</h2>',
-            unsafe_allow_html=True)
-st.write("""
-This dashboard provides an in-depth exploration of maritime operations, utilizing data from multiple sources to reveal patterns and insights into port usage, vessel distribution, and voyage characteristics. Users can explore metrics and visual insights that are essential for strategic maritime decisions.
-""")
+# # Analysis Overview with custom styling
+# st.markdown('<h2 class="section-header">🔍 Analysis Overview</h2>',
+#             unsafe_allow_html=True)
+# st.write("""
+# This dashboard provides an in-depth exploration of maritime operations, utilizing data from multiple sources to reveal patterns and insights into port usage, vessel distribution, and voyage characteristics. Users can explore metrics and visual insights that are essential for strategic maritime decisions.
+# """)
 
-# Footer with minimal styling and consistent font
-st.markdown('<footer>© 2024 Maritime Insights</footer>',
-            unsafe_allow_html=True)
+# # Footer with minimal styling and consistent font
+# st.markdown('<footer>© 2024 Maritime Insights</footer>',
+#             unsafe_allow_html=True)
